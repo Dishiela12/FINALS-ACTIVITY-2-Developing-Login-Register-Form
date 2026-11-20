@@ -1,0 +1,11 @@
+{% extends 'accounts/base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+  <h1>Dashboard</h1>
+  <p class="subtitle">Welcome, {{ user.first_name|default:user.username }}!</p>
+  {% if messages %}
+    <ul class="messages">{% for m in messages %}<li class="{{ m.tags }}">{{ m }}</li>{% endfor %}</ul>
+  {% endif %}
+  <p class="switch">Logged in as <strong>{{ user.username }}</strong></p>
+  <a class="btn" style="text-align:center;text-decoration:none;" href="{% url 'logout_user' %}">Logout</a>
+{% endblock %}

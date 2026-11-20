@@ -1,0 +1,26 @@
+{% extends 'accounts/base.html' %}
+{% block title %}Register{% endblock %}
+{% block card_class %}wide{% endblock %}
+{% block content %}
+  <h1>Register</h1>
+  <p class="subtitle">Fill in your details</p>
+
+  {% if messages %}
+    <ul class="messages">{% for m in messages %}<li class="{{ m.tags }}">{{ m }}</li>{% endfor %}</ul>
+  {% endif %}
+
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div class="grid">
+      <div>{{ form.first_name.label_tag }}{{ form.first_name }}{{ form.first_name.errors }}</div>
+      <div>{{ form.last_name.label_tag }}{{ form.last_name }}{{ form.last_name.errors }}</div>
+      <div>{{ form.username.label_tag }}{{ form.username }}{{ form.username.errors }}</div>
+      <div>{{ form.birth_date.label_tag }}{{ form.birth_date }}{{ form.birth_date.errors }}</div>
+      <div>{{ form.password1.label_tag }}{{ form.password1 }}{{ form.password1.errors }}</div>
+      <div>{{ form.password2.label_tag }}{{ form.password2 }}{{ form.password2.errors }}</div>
+    </div>
+    <button type="submit" class="btn">Register</button>
+  </form>
+  <p class="switch">Already have an account? <a href="{% url 'login_user' %}">Login</a></p>
+{% endblock %}

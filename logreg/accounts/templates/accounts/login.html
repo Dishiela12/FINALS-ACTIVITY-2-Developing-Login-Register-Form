@@ -1,0 +1,20 @@
+{% extends 'accounts/base.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+  <h1>Login</h1>
+  <p class="subtitle">Welcome back, User!</p>
+
+  {% if messages %}
+    <ul class="messages">{% for m in messages %}<li class="{{ m.tags }}">{{ m }}</li>{% endfor %}</ul>
+  {% endif %}
+
+  <form method="post" novalidate>
+    {% csrf_token %}
+    <label for="{{ form.username.id_for_label }}">{{ form.username.label }}:</label>
+    {{ form.username }}
+    <label for="{{ form.password.id_for_label }}">{{ form.password.label }}:</label>
+    {{ form.password }}
+    <button type="submit" class="btn">Login</button>
+  </form>
+  <p class="switch">Don't have an account? <a href="{% url 'register_user' %}">Register</a></p>
+{% endblock %}

@@ -1,0 +1,47 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  font-family: 'Inter', system-ui, sans-serif; color: #1f1f1f;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('../img/Food-Background-Images.jpg') center / cover no-repeat fixed; background-color: #fff;
+}
+
+.card { background: #fff; border-radius: 16px; padding: 28px 32px; width: 100%; max-width: 380px;
+        box-shadow: 0 10px 40px rgba(0,0,0,.35); margin: 16px; }
+
+.card.wide { max-width: 560px; }
+
+.card h1 { margin: 0; text-align: center; font-size: 1.6rem; }
+
+.subtitle { text-align: center; font-size: .8rem; color: #555; margin: 4px 0 18px; }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
+
+@media (max-width: 520px) { .grid { grid-template-columns: 1fr; } }
+
+label { display: block; font-size: .8rem; font-weight: 600; margin: 10px 0 4px; }
+
+.grid label { margin-top: 0; }
+
+.input { width: 100%; padding: 10px 12px; border: 1px solid #eee; border-radius: 6px;
+         background: #f5f5f5; font: inherit; }
+
+.input:focus { outline: 2px solid #4169ff; background: #fff; }
+
+.btn { display: block; width: 60%; margin: 22px auto 10px; padding: 10px; border: 0; border-radius: 6px;
+       background: #4169ff; color: #fff; font-weight: 600; cursor: pointer; }
+
+.btn:hover { background: #2f55e6; }
+
+.switch { text-align: center; font-size: .75rem; color: #444; margin: 0; }
+
+.switch a { color: #4169ff; text-decoration: none; }
+
+.errorlist { list-style: none; margin: 4px 0 0; padding: 0; color: #c0392b; font-size: .72rem; }
+
+.messages { list-style: none; padding: 0; margin: 0 0 12px; }
+
+.messages li { padding: 8px 12px; border-radius: 6px; font-size: .8rem; margin-bottom: 6px; }
+
+.messages .success { background: #e6f6ea; color: #1e6b34; }
+.messages .error   { background: #fdecea; color: #a12622; }
+.messages .info    { background: #e8f0fe; color: #1a47a8; }
